@@ -8,12 +8,15 @@ django-fileicons
 ========================
 ::
 
-    {% load fileicons_tags %}
+    {% load fileicons_filters %}
 
     {# Возвращает имя файла без расширения #}
     {{ object.attachment|filename }}
 
     {# Возвращает URL к иконке файла #}
+    {{ object.attachment|fileicon_url }}
+
+    {# Возвращает иконку файла в виде HTML тега <img> #}
     {{ object.attachment|fileicon }}
 
 Настройка приложения

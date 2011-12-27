@@ -8,7 +8,9 @@ from fileicons.conf.settings import BASE_URL, ICON_LIST, DEFAULT_ICON, TEMPLATE_
 
 register = template.Library()
 
-# Utils
+########################################################################################################################
+# Utils                                                                                                                #
+########################################################################################################################
 
 def validate_path(func):
     """
@@ -42,7 +44,9 @@ def get_url_fileicon(path):
         return '%s/%s' % (BASE_URL, filename)
     return ''
 
-# Filters
+########################################################################################################################
+# Filters                                                                                                              #
+########################################################################################################################
 
 def filename(filefield):
     """
@@ -54,9 +58,19 @@ def filename(filefield):
 
 register.filter('filename', filename)
 
-def fileicon(filefield):
+def fileicon_url(filefield):
     """
     Возвращает URL к иконке файла.
+
+    {{ object.attachment|fileicon_url }}
+    """
+    return get_url_fileicon(filefield.name)
+
+register.filter('fileicon_url', fileicon_url)
+
+def fileicon(filefield):
+    """
+    Возвращает иконку файла в виде HTML тега <img>.
 
     {{ object.attachment|fileicons }}
     """
@@ -70,7 +84,7 @@ def fileicon(filefield):
 
 register.filter('fileicons', fileicon)
 
-def text_fileicon(filefield):
+def fileicon_for_text(filefield):
     """
     Парсит HTML-разметку, добавляя иконки к ссылкам.
     Исключения: ссылки внутри которых содержится тег <img>.
