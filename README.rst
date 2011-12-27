@@ -25,7 +25,7 @@ FILEICON_TEMPLATE_IMAGE_TAG = '<img src="%(url)s" width="16" height="16" class="
 Тестирование
 ^^^^^^^^^^^^
 
-Выполнить `python manage.py test fileicons --setting=fileicons.tests.settings`
+Выполнить ``python manage.py test fileicons --setting=fileicons.tests.settings``
 
 Благодарности
 ^^^^^^^^^^^^^
