@@ -1,0 +1,1 @@
+from fileicons.tests.test import *
