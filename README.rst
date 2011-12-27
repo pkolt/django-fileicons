@@ -1,10 +1,11 @@
+================
 django-fileicons
 ================
 
 Возвращает нужную иконку по типу файла.
 
 Использование в шаблонах
-------------------------
+========================
 ::
 
     {% load fileicons_tags %}
@@ -16,7 +17,7 @@ django-fileicons
     {{ object.attachment|fileicon }}
 
 Настройка приложения
---------------------
+====================
 
 Добавить значения в settings.py::
 
@@ -24,13 +25,13 @@ django-fileicons
     FILEICON_TEMPLATE_IMAGE_TAG = '<img src="%(url)s" width="16" height="16" class="fileicon">'
 
 Тестирование
-------------
+============
 
 Выполнить::
 
-    ``python manage.py test fileicons --setting=fileicons.tests.settings``
+    python manage.py test fileicons --setting=fileicons.tests.settings
 
 Благодарности
-^^^^^^^^^^^^^
+=============
 
 File Icons <http://www.splitbrain.org/projects/file_icons>
