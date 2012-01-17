@@ -82,7 +82,7 @@ def fileicon(filefield):
         }
     return safe(html)
 
-register.filter('fileicons', fileicon)
+register.filter('fileicon', fileicon)
 
 def fileicon_for_text(filefield):
     """
